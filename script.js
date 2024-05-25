@@ -45,17 +45,22 @@ function compareResult(weapons) {
         return "draw";
     } else {
         console.log(weapons)
-        return outcomes[weapons[0]] === weapons[1] ? (scores.human++, 'Human wins!')
-            : (scores.computer++, 'Computer wins!');
+        return outcomes[weapons[0]] === weapons[1] ?
+            (scores.human++, document.getElementById('result').innerHTML = 'Human Wins!')
+            : (scores.computer++, document.getElementById('result').innerHTML = 'Computer Wins!');
     }
 }
 
 function playRound(selected) {
-    console.log(compareResult(getWeapon(selected, getComputerChoice())));
-    console.log(scores);
+    console.log(
+        compareResult(getWeapon(selected, getComputerChoice())),
+        document.getElementById('human-score').innerHTML = scores.human,
+        document.getElementById('computer-score').innerHTML = scores.computer
+    );
 
     if (scores.human === 5 || scores.computer === 5) {
-        console.log(`${scores.human === 5 ? 'Human' : 'Computer'} wins!`);
+        console.log(document.getElementById('final-result').innerHTML
+            = scores.human === 5 ? 'You Win!' : 'Computer Wins...');
         resetScores();
     }
 }

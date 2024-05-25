@@ -46,6 +46,19 @@
     <div class="game-container">
         <h2 id="result">Choose your Weapon</h2>
         <p id="result-description">First to score 5 points wins the game</p>
+
+        <div class="flex-container">
+            <div class="human-data">
+                <div class="image-container"></div>
+                <p id="human-score">Player: 0</p>
+            </div>
+            <div class="computer-data">
+                <div class="image-container"></div>
+                <p id="computer-score">Computer: 0</p>
+            </div>
+
+        </div>
+
         <div class="flex-container">
             <div class="user-options">
                 <div class="grid">
@@ -60,6 +73,11 @@
                 <div class="button scissor">scissor</div>
             </div>
         </div>
+    </div>
+
+    <div class="pop-up">
+        <h1 id="final-result">Final Result</h1>
+        <button class="button">Play Again</button>
     </div>
 
     <script src="./script.js"></script>
