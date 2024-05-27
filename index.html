@@ -10,10 +10,10 @@
 
 <body>
     <header>
-        <div class="content-wrapper">
+        <div class="content-wrapper flex-container navigation-wrapper">
             <div class="logo-container">
-                <div class="image-contaienr"></div>
-                Jrome.Dev
+                <div class="image-container logo"></div>
+                <h2>Jrome.Dev</h2>
             </div>
             <nav>
                 <ul>
@@ -31,23 +31,24 @@
         </div>
     </header>
     <main>
-        <div class="content-wrapper">
+        <div class="content-wrapper hero">
             <div class="section1">
                 <h1 class="game-title">ROCK<br>PAPER<br>SCISSOR</h1>
                 <p class="game-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde eum nihil
                     quae praesentium, eaque iusto esse minima obcaecati non, nisi dolores aliquam magni deleniti
                     nesciunt, vel ut vitae amet veritatis!</p>
+                <button id="play-button" class="button" onclick="showGame()">PLAY 🤘</button>
             </div>
             <div class="section2"></div>
         </div>
     </main>
 
-
-    <div class="game-container">
+    <div id="game-overlay"></div>
+    <div id="game-container">
         <h2 id="result">Choose your Weapon</h2>
         <p id="result-description">First to score 5 points wins the game</p>
 
-        <div class="flex-container">
+        <div class="scoring grid">
             <div class="human-data">
                 <div class="image-container"></div>
                 <p id="human-score">Player: 0</p>
@@ -56,28 +57,50 @@
                 <div class="image-container"></div>
                 <p id="computer-score">Computer: 0</p>
             </div>
-
         </div>
 
-        <div class="flex-container">
+        <div class="options grid">
             <div class="user-options">
                 <div class="grid">
-                    <button class="button rock" onclick="playRound(1)">rock</button>
-                    <button class="button paper" onclick="playRound(2)">paper</button>
-                    <button class="button scissor" onclick="playRound(3)">scissor</button>
+                    <div class="grid-item"><button id="player_weapon-1" class="button weapon"
+                            onclick="playRound(1)">✊</button></div>
+                    <div class="grid-item"><button id="player_weapon-2" class="button weapon"
+                            onclick="playRound(2)">🖐</button></div>
+                    <div class="grid-item"><button id="player_weapon-3" class="button weapon"
+                            onclick="playRound(3)">✌</button></div>
                 </div>
             </div>
             <div class="computer-options">
-                <div class="button rock">rock</div>
-                <div class="button paper">paper</div>
-                <div class="button scissor">scissor</div>
+                <div class="grid">
+                    <div class="grid-item">
+                        <div id="computer_weapon-1" class="button weapon">✊</div>
+                    </div>
+                    <div class="grid-item">
+                        <div id="computer_weapon-2" class="button weapon">🖐</div>
+                    </div>
+                    <div class="grid-item">
+                        <div id="computer_weapon-3" class="button weapon">✌</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="pop-up">
-        <h1 id="final-result">Final Result</h1>
-        <button class="button">Play Again</button>
+    <div id="modal-overlay">
+        <div class="modal">
+            <h1 id="final-score">Final Result</h1>
+            <div class="grid">
+                <div>
+                    <h1 id="human-final_score">0</h1>
+                    <p>Player</p>
+                </div>
+                <div>
+                    <h1 id="computer-final_score">0</h1>
+                    <p>Computer</p>
+                </div>
+            </div>
+            <button class="button" id="modal-button" onclick="playAgain()">Play Again</button>
+        </div>
     </div>
 
     <script src="./script.js"></script>
