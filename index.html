@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <div class="content-wrapper flex-container navigation-wrapper">
+        <div class="content-wrapper navigation-wrapper flex-center">
             <div class="logo-container">
                 <div class="image-container logo"></div>
                 <h2>Jrome.Dev</h2>
@@ -31,7 +31,7 @@
         </div>
     </header>
     <main>
-        <div class="content-wrapper hero">
+        <div class="content-wrapper hero grid grid-2">
             <div class="section1">
                 <h1 class="game-title">ROCK<br>PAPER<br>SCISSOR</h1>
                 <p class="game-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde eum nihil
@@ -43,43 +43,44 @@
         </div>
     </main>
 
-    <div id="game-overlay"></div>
-    <div id="game-container">
-        <h2 id="result">Choose your Weapon</h2>
-        <p id="result-description">First to score 5 points wins the game</p>
+    <div id="game-overlay">
+        <div id="game-container">
+            <h2 id="result">Choose your Weapon</h2>
+            <p id="result-description">First to score 5 points wins the game</p>
 
-        <div class="scoring grid">
-            <div class="human-data">
-                <div class="image-container"></div>
-                <p id="human-score">Player: 0</p>
-            </div>
-            <div class="computer-data">
-                <div class="image-container"></div>
-                <p id="computer-score">Computer: 0</p>
-            </div>
-        </div>
-
-        <div class="options grid">
-            <div class="user-options">
-                <div class="grid">
-                    <div class="grid-item"><button id="player_weapon-1" class="button weapon"
-                            onclick="playRound(1)">✊</button></div>
-                    <div class="grid-item"><button id="player_weapon-2" class="button weapon"
-                            onclick="playRound(2)">🖐</button></div>
-                    <div class="grid-item"><button id="player_weapon-3" class="button weapon"
-                            onclick="playRound(3)">✌</button></div>
+            <div class="scoring grid">
+                <div class="human-data">
+                    <div class="image-container"></div>
+                    <p id="human-score">Player: 0</p>
+                </div>
+                <div class="computer-data">
+                    <div class="image-container"></div>
+                    <p id="computer-score">Computer: 0</p>
                 </div>
             </div>
-            <div class="computer-options">
-                <div class="grid">
-                    <div class="grid-item">
-                        <div id="computer_weapon-1" class="button weapon">✊</div>
+
+            <div class="options grid">
+                <div class="user-options">
+                    <div class="grid">
+                        <div class="grid-item"><button id="player_weapon-1" class="button weapon"
+                                onclick="playRound(1)">✊</button></div>
+                        <div class="grid-item"><button id="player_weapon-2" class="button weapon"
+                                onclick="playRound(2)">🖐</button></div>
+                        <div class="grid-item"><button id="player_weapon-3" class="button weapon"
+                                onclick="playRound(3)">✌</button></div>
                     </div>
-                    <div class="grid-item">
-                        <div id="computer_weapon-2" class="button weapon">🖐</div>
-                    </div>
-                    <div class="grid-item">
-                        <div id="computer_weapon-3" class="button weapon">✌</div>
+                </div>
+                <div class="computer-options">
+                    <div class="grid">
+                        <div class="grid-item">
+                            <div id="computer_weapon-1" class="button weapon">✊</div>
+                        </div>
+                        <div class="grid-item">
+                            <div id="computer_weapon-2" class="button weapon">🖐</div>
+                        </div>
+                        <div class="grid-item">
+                            <div id="computer_weapon-3" class="button weapon">✌</div>
+                        </div>
                     </div>
                 </div>
             </div>
