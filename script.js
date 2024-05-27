@@ -65,7 +65,7 @@ function setResultColor(result, weaponNumbers) {
         default:
             var weapons = document.getElementsByClassName("weapon");
             for (var i = 0; i < weapons.length; i++) {
-                weapons[i].style.backgroundColor = "#07787c";
+                weapons[i].style.backgroundColor = "#7077A1";
             }
             break;
     }
@@ -109,17 +109,13 @@ function playRound(playerWeaponNumber) {
 }
 
 function showGame() {
-    const showHide = (id, visibility) => document.getElementById(id).style.visibility = visibility;
-    const buttons = document.getElementsByClassName('button');
-
-    ['game-overlay', 'game-container'].forEach(id => showHide(id, 'visible'));
-
-    document.getElementById('game-overlay').addEventListener('click', () => {
-        ['game-overlay', 'game-container'].forEach(id => showHide(id, 'hidden'));
-        Array.from(buttons).forEach(button => button.style.transition = 'none');
+    const overlay = document.getElementById('game-overlay');
+    overlay.style.display = 'block';
+    overlay.addEventListener('click', (event) => {
+        if (event.target === overlay) {
+            overlay.style.display = 'none';
+        }
     });
-
-    Array.from(buttons).forEach(button => button.style.transition = '.3s ease');
 }
 
 function playAgain() {
