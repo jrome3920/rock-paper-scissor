@@ -12,7 +12,9 @@
     <header>
         <div class="content-wrapper navigation-wrapper flex-center">
             <div class="logo-container">
-                <div class="image-container logo"></div>
+                <div class="image-container logo">
+                    <img src="./images/profile.png" alt="">
+                </div>
                 <h2>Jrome.Dev</h2>
             </div>
             <nav>
@@ -21,25 +23,29 @@
                         <a href="#">Home</a>
                     </li>
                     <li>
-                        <a href="#">About</a>
+                        <a href="pages/about.html">About</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="pages/contacts.html">Contact</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <div class="content-wrapper hero grid grid-2">
+        <div class="content-wrapper hero grid">
             <div class="section1">
                 <h1 class="game-title">ROCK<br>PAPER<br>SCISSOR</h1>
-                <p class="game-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde eum nihil
-                    quae praesentium, eaque iusto esse minima obcaecati non, nisi dolores aliquam magni deleniti
-                    nesciunt, vel ut vitae amet veritatis!</p>
+                <p class="game-description">A modern take on the classic game of Rock Paper Scissors. We're bringing the
+                    age-old game into the digital era with a sleek, user-friendly interface and exciting new features.
+                </p>
                 <button id="play-button" class="button" onclick="showGame()">PLAY 🤘</button>
             </div>
-            <div class="section2"></div>
+            <div class="section2">   
+                <div class="item item-1">🖐</div>
+                <div class="item item-2">✊</div>
+                <div class="item item-3">✌</div>
+            </div>
         </div>
     </main>
 
@@ -103,7 +109,9 @@
             <button class="button" id="modal-button" onclick="playAgain()">Play Again</button>
         </div>
     </div>
-
+    <footer>
+        <p>Copyright © 2024 Jrome.Dev</p>
+    </footer>
     <script src="./script.js"></script>
 </body>
 
