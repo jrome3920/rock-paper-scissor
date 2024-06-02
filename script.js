@@ -73,8 +73,8 @@ function setResultColor(result, weaponNumbers) {
 
 function compareResult(weapons, weaponNumbers) {
     const outcomes = {
-        rock: 'scissors',
-        scissors: 'paper',
+        rock: 'scissor',
+        scissor: 'paper',
         paper: 'rock'
     };
     console.log(weapons, weaponNumbers)
