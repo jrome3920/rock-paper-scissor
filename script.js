@@ -126,24 +126,3 @@ function playAgain() {
     document.getElementById('result').innerHTML = 'Choose your weapon';
     document.getElementById('result-description').innerHTML = 'First to score 5 points wins the game';
 }
-
-function getHeader() {
-    var source = document.getElementById("navbar-template").innerHTML;
-    var template = Handlebars.compile(source);
-    var html = template();
-    document.getElementById("navbar-container").innerHTML = html;
-}
-
-window.addEventListener('scroll', function () {
-    var footer = document.getElementById('footer');
-    var scrollPosition = window.scrollY;
-    var windowHeight = window.innerHeight;
-    var bodyHeight = document.body.offsetHeight;
-
-    // Check if scrolled to the bottom of the page
-    if (scrollPosition + windowHeight >= bodyHeight) {
-        footer.style.display = 'block';
-    } else {
-        footer.style.display = 'none';
-    }
-});
