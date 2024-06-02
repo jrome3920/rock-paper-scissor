@@ -1,10 +1,10 @@
 const scores = {
-    human: 0,
+    player: 0,
     computer: 0
 }
 
 function resetScores() {
-    scores.human = scores.computer = 0;
+    scores.player = scores.computer = 0;
 }
 
 function getComputerChoice() {
@@ -16,8 +16,8 @@ function resetWeaponColors() {
     setResultColor('', '');
 }
 
-function getWeapon(humanChoice, computerChoice) {
-    let array = [humanChoice, computerChoice];
+function getWeapon(playerChoice, computerChoice) {
+    let array = [playerChoice, computerChoice];
     for (let index = 0; index < array.length; index++) {
         switch (array[index]) {
             case 1:
@@ -39,14 +39,14 @@ function getWeapon(humanChoice, computerChoice) {
 }
 
 function getCurrentScore() {
-    document.getElementById('human-score').innerHTML = 'Player: ' + scores.human
+    document.getElementById('player-score').innerHTML = 'Player: ' + scores.player
     document.getElementById('computer-score').innerHTML = 'Computer: ' + scores.computer
 }
 
 function setResultColor(result, weaponNumbers) {
     const player = document.getElementById("player_weapon-" + weaponNumbers[0]);
-    const computer = document.getElementById("computer_weapon-" + weaponNumbers[0]);
-
+    const computer = document.getElementById("computer_weapon-" + weaponNumbers[1]);
+    
     function setColor(color) {
         player.style.backgroundColor = color[0];
         computer.style.backgroundColor = color[1];
@@ -84,9 +84,9 @@ function compareResult(weapons, weaponNumbers) {
         setResultColor('draw', weaponNumbers);
     } else {
         console.log(outcomes[weapons[0]] === weapons[1] ?
-            (document.getElementById('result-description').innerHTML = 'Human wins because ' + weapons[0] + ' beats ' + weapons[1] + '.'
+            (document.getElementById('result-description').innerHTML = 'You win because ' + weapons[0] + ' beats ' + weapons[1] + '.'
                 , setResultColor('win', weaponNumbers)
-                , scores.human++, document.getElementById('result').innerHTML = 'Human Wins!')
+                , scores.player++, document.getElementById('result').innerHTML = 'You Win!')
             : (document.getElementById('result-description').innerHTML = 'Computer wins because ' + weapons[1] + ' beats ' + weapons[0] + '.'
                 , setResultColor('lose', weaponNumbers)
                 , scores.computer++, document.getElementById('result').innerHTML = 'Computer Wins!'));
@@ -99,10 +99,10 @@ function playRound(playerWeaponNumber) {
     const weaponNumbers = [playerWeaponNumber, computerWeaponNumber];
     compareResult(getWeapon(playerWeaponNumber, computerWeaponNumber), weaponNumbers);
     getCurrentScore();
-    if (scores.human === 5 || scores.computer === 5) {
+    if (scores.player === 5 || scores.computer === 5) {
         console.log(document.getElementById('final-score').innerHTML
-            = scores.human === 5 ? 'You Win!' : 'Computer Wins...');
-        document.getElementById('human-final_score').innerHTML = scores.human
+            = scores.player === 5 ? 'You Win!' : 'Computer Wins...');
+        document.getElementById('player-final_score').innerHTML = scores.player
         document.getElementById('computer-final_score').innerHTML = scores.computer
         document.getElementById('modal-overlay').style.display = 'block'
     }
