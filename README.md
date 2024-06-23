@@ -25,7 +25,7 @@ The game can be played in a single round or in a series of rounds, with the firs
      <td align="center" height="123" width="123">
       <img width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" />
        </br>
-       <strong>Php</strong>
+       <strong>JavaScript</strong>
     </td>
   </tr>
 </table>
